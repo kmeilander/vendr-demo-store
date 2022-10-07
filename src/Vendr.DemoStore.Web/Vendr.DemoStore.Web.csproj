@@ -5,7 +5,8 @@
 
     <ItemGroup>
         <PackageReference Include="Umbraco.Cms" Version="10.2.1" />
-        <PackageReference Include="Vendr" Version="3.0.1" />
+        <PackageReference Include="Vendr" Version="3.0.2-beta0003" />
+        <PackageReference Include="Vendr.Umbraco.Startup" Version="3.0.2-beta0003" />
     </ItemGroup>
 
 

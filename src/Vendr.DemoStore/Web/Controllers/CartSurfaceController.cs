@@ -31,24 +31,24 @@ namespace Vendr.DemoStore.Web.Controllers
         [HttpPost]
         public IActionResult AddToCart(AddToCartDto postModel)
         {
-            for (var i = 0; i < 2; i++) //Add 50 orders
+            for (var i = 0; i < 1; i++) //Add 50 orders
             {
-                try
-                {
-                    _vendrApi.Uow.Execute(uow =>
-                    {
-                        var store = CurrentPage.GetStore();
-                        _vendrApi.ClearCurrentOrder(store.Id);
+                //try
+                //{
+                //    _vendrApi.Uow.Execute(uow =>
+                //    {
+                //        var store = CurrentPage.GetStore();
+                //        _vendrApi.ClearCurrentOrder(store.Id);
 
-                        uow.Complete();
-                    });
-                }
-                catch (ValidationException ex)
-                {
-                    ModelState.AddModelError("productReference", "Failed to add product to cart");
+                //        uow.Complete();
+                //    });
+                //}
+                //catch (ValidationException ex)
+                //{
+                //    ModelState.AddModelError("productReference", "Failed to add product to cart");
 
-                    return CurrentUmbracoPage();
-                }
+                //    return CurrentUmbracoPage();
+                //}
 
                 try
                 {
@@ -71,7 +71,7 @@ namespace Vendr.DemoStore.Web.Controllers
                     return CurrentUmbracoPage();
                 }
 
-                PlaceTestOrder();
+                //PlaceTestOrder();
             }
 
             TempData["addedProductReference"] = postModel.ProductReference;
